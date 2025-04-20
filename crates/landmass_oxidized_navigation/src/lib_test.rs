@@ -1,7 +1,7 @@
 use std::{collections::HashMap, time::Duration};
 
 use bevy::prelude::*;
-use bevy_landmass::{prelude::*, PointSampleDistance3d};
+use bevy_landmass::prelude::*;
 use bevy_rapier3d::prelude::*;
 use oxidized_navigation::{
   ActiveGenerationTasks, NavMeshAffector, NavMeshSettings,
@@ -42,7 +42,7 @@ fn generates_nav_mesh() {
   let archipelago_entity = app
     .world_mut()
     .spawn((
-      Archipelago3d::new(AgentOptions::from_agent_radius(0.5)),
+      Archipelago3d::new(AgentOptions::default_for_agent_radius(0.5)),
       OxidizedArchipelago,
     ))
     .id();
